@@ -19,10 +19,10 @@ router.post('/login', function(req, res, next) {
 
   function callback(error, response, body) {
       if (!error && response.statusCode == 200) {
-          res.status(200).send({success: true, body: JSON.parse(body)})
+          res.status(200).send({success: true})
           return
       }else {
-        res.status(response.statusCode).send({success: false, body: JSON.parse(body)})
+        res.status(response.statusCode).send({success: false, message: JSON.parse(body).message})
       }
   }
   request(options, callback);
