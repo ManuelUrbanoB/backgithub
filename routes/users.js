@@ -4,7 +4,6 @@ var request = require('request');
 var router = express.Router();
 
 router.post('/login', function(req, res, next) {
-    console.log(req.body);
     var username  = req.body.username;
     var password  = req.body.password;
     var options = {
